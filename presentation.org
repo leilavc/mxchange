@@ -100,8 +100,8 @@ app.py
   - 'Look at this meal exchange'
 - We've now identified a few moving parts to our website.
 - This means that we need to create
-  1. models.py: a database to keep track of what's going on + 'tables' in that
-  database
+  1. models.py: a database to keep track of what's going on + 'tables'
+     in that database
   2. routes.py: webpages
   3. templates/*.html: templates for our front-end web pages
   4. some sort of user authentication scheme.
