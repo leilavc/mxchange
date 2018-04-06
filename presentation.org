@@ -1,9 +1,28 @@
 #+STARTUP: inlineimages
 
 * What will you get out of this presentation?
+- Goal: to learn the key parts of a web app and how they interact
+- CRUD application: Create, read, update, delete.
+  - Surprisingly powerful!
+  - Possibly one of the most powerful uses of coding knowledge
+- The MVC/3-part framework of an application
+  - Routes (what should happen when we go to a page?)
+  - Views (what html should we show when we go to page?)
+  - Models/Database (what stuff are we dealing with?)
+  - We'll cover all of these + a brief intro into forms
+- To follow along, go to https://github.com/leilavc/mxchange
 * Who am I?
+- Leila Clark '18, AB COS
+- Interned at Jane Street, starting fulltime in the fall
+- Writing flask apps for a while, currently using it for my thesis.
+  - Caveat: I don't claim to have 100% perfect use of flask,
+    especially because I haven't used it (or python) in industry.
 * What is Flask?
-- The Archlinux of web frameworks.
+- Two major python frameworks: Flask and Django.
+- Django is 'batteries included.' Flask is more minimalist.
+  - Like driving an automatic vs. manual? (I don't drive.) You
+    probably always want to use one, but you really understand how
+    cars work from driving a manual.
 * Dependencies
 
 - Install flask-cas
@@ -16,7 +35,7 @@ source .env/bin/activate
 pip install flask
 #+END_SRC
 
-* Creating a website
+* Creating our first website
 
 - Write 4 lines:
 
