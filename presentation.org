@@ -3,7 +3,7 @@
 * What will you get out of this presentation?
 * Who am I?
 * What is Flask?
-- The Archlinux of web frameworks...
+- The Archlinux of web frameworks.
 * Dependencies
 
 - Install flask-cas
@@ -133,9 +133,17 @@ def main():
 ** Fourth: Whoops. Monkeypatch flask_cas
 - Go to .env/lib/python3.6/site-packages/flask_cas/routing.py
 - Change line 125 from
-# attributes = xml_from_dict["cas:attribute"]
+
+#+BEGIN_SRC python
+attributes = xml_from_dict["cas:attribute"]
+#+END_SRC
+
 to
-# attributes = xml_from_dict.get("cas:attrbute", {})
+
+#+BEGIN_SRC python
+attributes = xml_from_dict.get("cas:attrbute", {})
+#+END_SRC
+
 - This is a bug...
 https://github.com/cameronbwhite/Flask-CAS/issues/31
 
