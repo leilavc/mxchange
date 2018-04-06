@@ -310,7 +310,7 @@ class MealExchange(db.Model):
 #+END_SRC
 
 *** Initialize our database
-Run in the folder the folder above mxchange:
+Run in the parent folder of mxchange:
 
 #+BEGIN_SRC python
 from mxchange import db, models
