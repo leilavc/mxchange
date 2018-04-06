@@ -174,10 +174,15 @@ attributes = xml_from_dict.get("cas:attrbute", {})
 
 * Step 2: Add some database tables
 ** Set up database
+Make sure you have flask_sqlalchemy installed.
+
 #+BEGIN_SRC shell
 pip install flask_sqlalchemy
 #+END_SRC
 
+Update the app configuration.
+
+mxchange/__init__.py
 #+BEGIN_SRC python
 from flask import Flask
 from flask_cas import CAS
@@ -353,6 +358,7 @@ pip install flask_wtf
 
 Create a file forms.py:
 
+mxchange/forms.py
 #+BEGIN_SRC python
 from flask_wtf import FlaskForm
 from wtforms import TextField, DateField, SelectField
@@ -366,8 +372,8 @@ class StartMealExchangeForm(FlaskForm):
         'breakfast', 'Breakfast'), ('lunch', 'Lunch'), ('dinner', 'Dinner')])
 
 
-# We don't need this right now but we'll need it later.
 class EndMealExchangeForm(FlaskForm):
+    # We don't need this right now but we might want it later.
     date = DateField(validators=[DataRequired()])
 #+END_SRC
 
@@ -379,15 +385,16 @@ mxchange/templates/start.html
     <h3>Start a meal exchange</h3>
     <form method="post" action="/start">
       {{ form.csrf_token }}
-      {{ form.guest.label }} {{ form.guest(size=20) }}
-      {{ form.date.label }} {{ form.date(size=20) }}
-      {{ form.meal.label }} {{ form.meal(size=20) }}
+      {{ form.guest.label }} {{ form.guest(size=20) }}<br>
+      {{ form.date.label }} {{ form.date(size=20) }}<br>
+      {{ form.meal.label }} {{ form.meal() }}<br>
       <input type="submit" value="Go">
     </form>
   </body>
 </html>
 #+END_SRC
-*** We need to make flask put these all together
+*** We need to make flask put these all together through routes
+
 mxchange/routes.py
 #+BEGIN_SRC python
 from . import app
@@ -509,8 +516,10 @@ def start():
     return render_template('start.html', form=form)
 #+END_SRC
 * Unfinished steps:
-** Creating a way to show meal exchanges
-** Creating a way to complete meal exchanges
-** Verifying certain properties about meal exchanges
-** Showing clubs
-** But now you have the skills to do all of these!
+- Create a way to show meal exchanges
+- Create a way to complete meal exchanges
+- Verify certain properties about meal exchanges
+- Showing clubs
+  - Maybe even do some complicated meal exchange matching algorithms?
+    :)
+- Importantly, you should now know how to begin working on any of these!

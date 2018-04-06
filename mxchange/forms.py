@@ -11,4 +11,5 @@ class StartMealExchangeForm(FlaskForm):
 
 
 class EndMealExchangeForm(FlaskForm):
+    # We don't need this right now but we might want it later.
     date = DateField(validators=[DataRequired()])
