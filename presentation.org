@@ -143,8 +143,8 @@ from . import app
 from flask_cas import login_required
 
 
-@login_required
 @app.route("/")
+@login_required
 def main():
     return "This is my website"
 #+END_SRC
@@ -163,13 +163,14 @@ to
 attributes = xml_from_dict.get("cas:attrbute", {})
 #+END_SRC
 
-- This is a bug...
-https://github.com/cameronbwhite/Flask-CAS/issues/31
+- This is a bug... see https://github.com/cameronbwhite/Flask-CAS/issues/31
 
-(There's probably a better way to fix this)
+(and there's probably a better way to fix this but this will work for now)
 
-** Now go to http://localhost:5000 again
-** To logout, go to http://localhost:5000/logout
+** Testing
+- Now go to http://localhost:5000 again
+- To logout, go to http://localhost:5000/logout
+- Yay!
 
 * Step 2: Add some database tables
 ** Set up database
