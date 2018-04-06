@@ -149,7 +149,7 @@ def main():
     return "This is my website"
 #+END_SRC
 
-** Fourth: Whoops. Monkeypatch flask_cas
+** Fourth: Whoops. Patch flask_cas
 - Go to .env/lib/python3.6/site-packages/flask_cas/routing.py
 - Change line 125 from
 
