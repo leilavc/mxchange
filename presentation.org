@@ -515,7 +515,20 @@ def start():
             return redirect('/')
     return render_template('start.html', form=form)
 #+END_SRC
-* Unfinished steps:
+* Conclusion:
+** What we've done
+- You should have:
+  - app.py
+  - mxchange/
+    - forms.py
+    - routes.py
+    - models.py
+    - __init__.py
+    - templates/
+      - start.html
+      - index.html
+- Congratulations!
+** Next steps?
 - Create a way to show meal exchanges
 - Create a way to complete meal exchanges
 - Verify certain properties about meal exchanges
